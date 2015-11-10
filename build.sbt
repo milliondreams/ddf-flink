@@ -57,9 +57,11 @@ lazy val flink = project.in(file("flink")).settings(commonSettings: _*).settings
   testOptions in Test += Tests.Argument("-oD")
 )
 
-lazy val flinkExamples = project.in(file("flink-examples")).dependsOn(flink).settings(commonSettings: _*).settings(
+lazy val flinkExamples = project.in(file("flink-examples")).dependsOn(flink)
+  .settings(commonSettings: _*).settings(
   name := "flink-examples",
-  pomExtra := submodulePom
+  pomExtra := submodulePom,
+  libraryDependencies ++= Seq("io.ddf" %% "ddf_core" % ddfVersion)
 )
 
 publishMavenStyle := true

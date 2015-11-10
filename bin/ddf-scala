@@ -34,7 +34,7 @@ SHELL_JAR="$FWDIR"/bin/jline2.jar:"$FWDIR"/bin/jshell.jar
 
 DEPS_JARS=$(echo "$FWDIR"/lib_managed/jars/*/*/*.jar | tr ' ' ':')
 
-XBOOT_JAR=$(echo "$FWDIR"/lib_managed/jars/org.scala-lang/scala-library/*.jar)
+XBOOT_JAR=$(echo "$FWDIR"/lib_managed/jars/org.scala-lang/scala-library/*.jar | tr ' ' ':')
 echo $XBOOT_JAR
 
 BUNDLE_JARS=$(echo "$FWDIR"/lib_managed/bundles/*/*/*.jar | tr ' ' ':')

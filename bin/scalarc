@@ -6,7 +6,9 @@ def time[A](a: => A) = {
    result
 }
 
-import _root_.io.ddf.flink.FlinkDDFManager
 
-val dm = new FlinkDDFManager()
+val mgr = new FlinkDDFManager()
+
+import scala.collection.JavaConversions._
+import io.ddf.flink._
 
